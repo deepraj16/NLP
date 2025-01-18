@@ -1,0 +1,83 @@
+Text Preprocessing in NLP
+Text preprocessing is one of the fundamental steps in an NLP pipeline. It involves preparing raw text data for further analysis or modeling by transforming it into a structured, clean, and consistent format. Raw text often contains noise, inconsistencies, and irrelevant information that could negatively affect the performance of NLP models. The goal of text preprocessing is to eliminate or reduce these issues while retaining meaningful information.
+
+Here’s a breakdown of common text preprocessing techniques:
+
+1. Lowercasing
+Description: Converts all characters in the text to lowercase.
+
+Purpose: Ensures that words like “Apple” and “apple” are treated the same.
+
+Example:
+
+Input: "This is a GOOD example."
+Output: "this is a good example."
+2. Removing Punctuation
+Description: Removes punctuation marks (e.g., periods, commas, question marks) from the text.
+
+Purpose: Punctuation often does not contribute to the meaning of words, so it's commonly removed to clean the data.
+
+Example:
+
+Input: "Hello, world! How are you?"
+Output: "Hello world How are you"
+3. Tokenization
+Description: Splitting the text into individual words (tokens) or subwords.
+
+Purpose: Breaks down the text into smaller, manageable parts, such as words or phrases.
+
+Example:
+
+Input: "Hello world"
+Output: ['Hello', 'world']
+Tokenization can be done at different levels:
+
+Word Tokenization: Splitting text into words.
+Sentence Tokenization: Splitting text into sentences.
+Subword Tokenization: Breaking words into subword units (useful for handling unknown words).
+4. Removing Stop Words
+Description: Removes common words (such as "the", "is", "in", "and", "a") that do not carry significant meaning in most contexts.
+
+Purpose: These words are typically filtered out because they occur frequently but don’t add much to the content of the text.
+
+Example:
+
+Input: "This is a good day."
+Output: "good day"
+5. Stemming
+Description: Reduces words to their root form by removing suffixes. It uses simple rules to chop off affixes (e.g., "running" → "run").
+
+Purpose: Reduces different forms of a word to a single base form.
+
+Example:
+
+Input: "running", "runner", "ran"
+Output: "run"
+Common Stemming Algorithms:
+
+Porter Stemmer: One of the most common stemming algorithms.
+Snowball Stemmer: An improvement over the Porter Stemmer for various languages.
+
+
+6. Lemmatization
+Description: Similar to stemming, but more advanced. Lemmatization reduces a word to its base form (lemma) by considering the context and part of speech (POS).
+
+Purpose: It results in more meaningful transformations compared to stemming. For example, “better” becomes “good”, and “running” becomes “run”.
+
+Example:
+
+Input: "running", "better", "was"
+Output: "run", "good", "be"
+Difference from Stemming:
+
+Stemming: A crude and fast approach, might not always result in valid words.
+Lemmatization: Slower but ensures the result is a valid word in the language.
+7. Removing Numbers
+Description: Removes numbers from the text.
+
+Purpose: Numbers usually do not contribute meaningful information in many NLP tasks, especially in tasks like sentiment analysis or topic modeling. However, in some tasks (e.g., named entity recognition), numbers might be retained.
+
+Example:
+
+Input: "I have 2 cats and 3 dogs."
+Output: "I have cats and dogs"
